@@ -18,7 +18,7 @@ function ProfilePosts({p}) {
                     <p>{new Date(p.updatedAt).toString().slice(16,24)}</p>
                 </div>
             </div>
-            <p className="text-sm md:text-lg">{p.description}</p>
+            <p className="text-sm md:text-lg">{p.description.slice(0,200) + " ...Read More"}</p>
             </div>
         </div>
     )
