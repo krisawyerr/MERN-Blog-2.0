@@ -9,6 +9,7 @@ import { URL } from "../url"
 function SideNavbar() {
     const navigate=useNavigate()
     const path=useLocation().pathname
+    const location=useLocation()
   
     const {user} = useContext(UserContext)
     const {setUser} = useContext(UserContext)
@@ -31,18 +32,24 @@ function SideNavbar() {
         <div>
             <h1 className="sideNavTitle"><Link to="/">Blog Market</Link></h1>
         </div>
-        <div>
+        {!user && <div>
             {path !== "/" && <h3 className="sideNavText"><Link to="/">Explore</Link></h3>}
             {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Explore</Link></h3>}
             {path !== "/" && <h3 className="sideNavText"><Link to="/">Search</Link></h3>}
             {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Search</Link></h3>}
-            {path !== `/profile/${user._id}` && user && <h3 className="sideNavText"><Link to={"/profile/"+user._id}>Profile</Link></h3>}
-            {path === `/profile/${user._id}` && user && <h3 className="sideNavTextSelected"><Link to={"/profile/"+user._id}>Profile</Link></h3>}
+        </div>}
+        {user && <div>
+            {path !== "/" && <h3 className="sideNavText"><Link to="/">Explore</Link></h3>}
+            {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Explore</Link></h3>}
+            {path !== "/" && <h3 className="sideNavText"><Link to="/">Search</Link></h3>}
+            {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Search</Link></h3>}
+            {user && path !== `/profile/${user._id}` && <h3 className="sideNavText"><Link to={"/profile/"+user._id}>Profile</Link></h3>}
+            {user && path === `/profile/${user._id}` && <h3 className="sideNavTextSelected"><Link to={"/profile/"+user._id}>Profile</Link></h3>}
             {path !== "/write" && user && <h3 className="sideNavText"><Link to="/write">Write</Link></h3>}
             {path === "/write" && user && <h3 className="sideNavTextSelected"><Link to="/write">Write</Link></h3>}
-            {path !== `/myblogs/${user._id}` && user && <h3 className="sideNavText"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
-            {path === `/myblogs/${user._id}` && user && <h3 className="sideNavTextSelected"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
-        </div>
+            {user && path !== `/myblogs/${user._id}` && <h3 className="sideNavText"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
+            {user && path === `/myblogs/${user._id}` && <h3 className="sideNavTextSelected"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
+        </div>}
         <div class="sideNavBottomSection">
             {!user && <h3 className="sideNavText"><Link to="/login">Login</Link></h3>}
             {!user && <h3 className="sideNavText"><Link to="/register">Register</Link></h3>}
