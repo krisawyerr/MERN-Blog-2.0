@@ -7,6 +7,7 @@ import axios from "axios"
 import { URL } from "../url"
 import HomePosts from "../components/HomePosts"
 import Loader from "../components/Loader"
+import SideNavbar from "../components/sidenav"
 
 
 const MyBlogs = () => {
@@ -47,28 +48,31 @@ const MyBlogs = () => {
     }, [search, user]);
 
     return (
-        <div>
-            <Navbar/>
-            <div className="myBlog">
-                {loader?
-                    <div>
-                        {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
-                        posts.map((post)=>(
-                        <Link to={user?`/posts/post/${post._id}`:"/login"} >
-                            <HomePosts key={post._id} post={post}/>
-                        </Link>
-                        )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
-                    </div>:
-                    <div className="myBlogGrid">
-                        {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
-                        posts.map((post)=>(
-                        <Link to={user?`/posts/post/${post._id}`:"/login"}>
-                            <HomePosts key={post._id} post={post}/>
-                        </Link>
-                        )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
-                    </div>}
+        <div className="blkk">
+            <SideNavbar />
+            <div className="bluee">
+                <Navbar/>
+                <div className="myBlog">
+                    {loader?
+                        <div>
+                            {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
+                            posts.map((post)=>(
+                            <Link to={user?`/posts/post/${post._id}`:"/login"} >
+                                <HomePosts key={post._id} post={post}/>
+                            </Link>
+                            )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+                        </div>:
+                        <div className="myBlogGrid">
+                            {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
+                            posts.map((post)=>(
+                            <Link to={user?`/posts/post/${post._id}`:"/login"}>
+                                <HomePosts key={post._id} post={post}/>
+                            </Link>
+                            )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+                        </div>}
+                </div>
+                <Footer/>
             </div>
-            <Footer/>
         </div>
     )
 }

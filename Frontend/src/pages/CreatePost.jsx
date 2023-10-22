@@ -6,6 +6,7 @@ import { UserContext } from '../context/UserContext'
 import { URL } from '../url'
 import axios from 'axios'
 import { Navigate, useNavigate } from 'react-router-dom'
+import SideNavbar from "../components/sidenav";
 
 function CreatePost() {
     const [title,setTitle]=useState("")
@@ -76,7 +77,9 @@ function CreatePost() {
     }
 
     return (
-        <div>
+      <div className="blkk">
+        <SideNavbar />
+        <div className="bluee">
             <Navbar/>
             <div className='px-6 md:px-[200px] mt-8'>
                 <h1 className='font-bold md:text-2xl text-xl '>Create a post</h1>
@@ -589,6 +592,8 @@ function CreatePost() {
             </div>
             <Footer/>
         </div>
+      </div>
+
     )
   }
   
