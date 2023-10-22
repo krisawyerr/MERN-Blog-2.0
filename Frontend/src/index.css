@@ -247,7 +247,9 @@
 }
 .homePostsImg {
     border-radius: 10px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    height: 175px;
+    width: 300px;
 }
 .homePostsTitle {
     display: flex;
@@ -255,6 +257,9 @@
     font-weight: bolder;
     text-transform: capitalize;
     font-size: larger;
+    height: 70px;
+    align-items: center;
+    text-align: center;
 }
 .homePostsUsernameAndDate {
     display: flex;
