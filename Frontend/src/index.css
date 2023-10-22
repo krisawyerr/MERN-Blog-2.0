@@ -23,6 +23,75 @@
 
 
 
+/* NAVBAR.JSX */
+.navbar {
+    display: grid; 
+    padding: 2rem 5rem;
+    grid-template-columns: 1fr;
+    justify-content: space-between; 
+    align-items: center; 
+}
+.navbarTitleAndMenu {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.navbarTitle h1 {
+    font-size: 1.2rem;
+    font-weight: 800; 
+}
+.navbarMenu div {
+    font-size: larger;
+}
+.navbarMenu p {
+    position: relative; 
+    cursor: pointer; 
+
+}
+.navbarSearch {
+    width: 100%;
+}
+.navbarSearch input{
+    border: #101010 2px solid;
+    text-align: center;
+    border-radius: 25px;
+    width: 500px;
+    height: 35px;
+}
+.navbarSearch div{
+    display: flex; 
+    margin-left: 0; 
+    justify-content: center; 
+    align-items: center; 
+}
+@media (max-width: 711px) {
+    .navbarSearch input{
+        border: #101010 2px solid;
+        text-align: center;
+        border-radius: 25px;
+        width: 100%;
+        height: 35px;
+    }
+
+}
+.navbarSearch p{
+    cursor: pointer; 
+    margin-right: 20px;
+}
+@media (min-width: 851px) {
+    .navbarTitle, .navbarMenu {
+      display: none; /* Hide the div when the viewport width is 768 pixels or smaller */
+    }
+    .navbar {
+        display: flex; 
+        padding: 2rem 0rem;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+}
+
 /* SIDENAV.JSX */
 .sideNav {
     border: 2px black solid;
