@@ -9,7 +9,7 @@ function HomePosts({post}) {
           <p>@{post.username}</p>
           <p>{new Date(post.updatedAt).toString().slice(3,10)}, {new Date(post.updatedAt).toString().slice(11,15)}</p>
         </div>
-        <div>{post.description.slice(0,102) + " ...Read More"}</div>
+        <div>{post.description.slice(0,94) + " ...Read More"}</div>
       </div>
     )
   }
