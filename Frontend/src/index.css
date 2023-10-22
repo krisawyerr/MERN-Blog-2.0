@@ -70,7 +70,7 @@
     align-items: center;
     
 }
-@media (max-width: 1628px) {
+@media (max-width: 1786px) {
     .homeGrid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -78,7 +78,7 @@
         
     }
 }
-@media (max-width: 1325px) {
+@media (max-width: 1472px) {
     .homeGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -86,7 +86,7 @@
         
     }
 }
-@media (max-width: 687px) {
+@media (max-width: 851px) {
     .homeGrid {
         display: grid;
         grid-template-columns: 1fr;
@@ -100,7 +100,7 @@
     min-height: 80vh;
     
 }
-@media (min-width: 1025px) {
+@media (min-width: 1175px) {
     .home {
         padding-left: 200px;
         padding-right: 200px;
