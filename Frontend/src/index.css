@@ -6,6 +6,13 @@
     grid-template-columns: 1fr 20fr;
     height: 100vh;
 }
+@media (max-width: 851px) {
+    .blkk {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+    }
+}
 .bluee {
     overflow: auto;
 }
@@ -62,6 +69,11 @@
     margin: 5px 0px;
     padding: 10px 0px;
 }
+@media (max-width: 851px) {
+    .sideNav {
+      display: none; /* Hide the div when the viewport width is 768 pixels or smaller */
+    }
+}
 
 /* HOME.JSX */
 .homeGrid {
@@ -78,7 +90,7 @@
         
     }
 }
-@media (max-width: 1472px) {
+@media (max-width: 1490px) {
     .homeGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -86,7 +98,7 @@
         
     }
 }
-@media (max-width: 851px) {
+@media (max-width: 690px) {
     .homeGrid {
         display: grid;
         grid-template-columns: 1fr;
@@ -100,7 +112,7 @@
     min-height: 80vh;
     
 }
-@media (min-width: 1175px) {
+@media (min-width: 1190px) {
     .home {
         padding-left: 200px;
         padding-right: 200px;
@@ -114,7 +126,7 @@
     align-items: center;
     
 }
-@media (max-width: 1628px) {
+@media (max-width: 1786px) {
     .myBlogGrid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -122,7 +134,7 @@
         
     }
 }
-@media (max-width: 1325px) {
+@media (max-width: 1490px) {
     .myBlogGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -130,7 +142,7 @@
         
     }
 }
-@media (max-width: 687px) {
+@media (max-width: 690px) {
     .myBlogGrid {
         display: grid;
         grid-template-columns: 1fr;
@@ -144,7 +156,7 @@
     min-height: 80vh;
     
 }
-@media (min-width: 1025px) {
+@media (min-width: 1190px) {
     .myBlog {
         padding-left: 200px;
         padding-right: 200px;
