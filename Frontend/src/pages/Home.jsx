@@ -19,23 +19,21 @@ function Home() {
   console.log(user)
 
   async function fetchPosts() {
-    setLoader(true)
-    try{
-      const res=await axios.get(URL+"/api/posts/"+search)
-      console.log(res.data)
-      setPosts(res.data)
-      if(res.data.length===0){
-        setNoResults(true)
+    setLoader(true);
+    try {
+      const res = await axios.get(URL + "/api/posts/" + search);
+      const sortedPosts = res.data.reverse(); // Reverse the array to have the newest posts first
+      const limitedPosts = sortedPosts.slice(0, 8); // Display only the first 8 posts
+      setPosts(limitedPosts);
+      if (limitedPosts.length === 0) {
+        setNoResults(true);
+      } else {
+        setNoResults(false);
       }
-      else{
-        setNoResults(false)
-      }
-      setLoader(false)
-      
-    }
-    catch(err){
-      console.log(err)
-      setLoader(true)
+      setLoader(false);
+    } catch (err) {
+      console.log(err);
+      setLoader(false);
     }
   }
 
