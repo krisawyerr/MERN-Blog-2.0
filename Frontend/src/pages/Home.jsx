@@ -43,25 +43,25 @@ function Home() {
   },[search])
 
   return (
-    <div className="blkk">
+    <div className="fullPage">
       <SideNavbar />
-      <div className="bluee">
+      <div className="mainSection">
         <Navbar />
         <div className="home">
           {loader?
             <div>
-              {loader?<div className="h-[40vh] flex justify-center items-center "><Loader/></div>: !noResults ? posts.map((post) => (
+              {loader?<div className="loader"><Loader/></div>: !noResults ? posts.map((post) => (
                 <Link to={user?`/posts/post/${post._id}`:"/login"}>
                   <HomePosts key={post._id} post={post}/>
                 </Link>
-              )): <h3 className="text-center font-bold mt-16">No posts available</h3>}
+              )): <h3 className="noPostSection">No posts available</h3>}
             </div>:
             <div className="homeGrid">
-              {loader?<div className="h-[40vh] flex justify-center items-center "><Loader/></div>: !noResults ? posts.map((post) => (
+              {loader?<div className="loader"><Loader/></div>: !noResults ? posts.map((post) => (
                 <Link to={user?`/posts/post/${post._id}`:"/login"}>
                   <HomePosts key={post._id} post={post}/>
                 </Link>
-              )): <h3 className="text-center font-bold mt-16">No posts available</h3>}
+              )): <h3 className="noPostSection">No posts available</h3>}
             </div>}
         </div>
         <Footer />

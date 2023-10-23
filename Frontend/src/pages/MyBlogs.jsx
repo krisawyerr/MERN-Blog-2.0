@@ -46,14 +46,14 @@ const MyBlogs = () => {
     }, [search, user]);
 
     return (
-        <div className="blkk">
+        <div className="fullPage">
             <SideNavbar />
-            <div className="bluee">
+            <div className="mainSection">
                 <Navbar/>
                 <div className="myBlog">
                     {loader?
                         <div>
-                            {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
+                            {loader?<div className="loader"><Loader/></div>:!noResults?
                             posts.map((post)=>(
                             <Link to={user?`/posts/post/${post._id}`:"/login"} >
                                 <HomePosts key={post._id} post={post}/>
@@ -61,7 +61,7 @@ const MyBlogs = () => {
                             )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
                         </div>:
                         <div className="myBlogGrid">
-                            {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
+                            {loader?<div className="loader"><Loader/></div>:!noResults?
                             posts.map((post)=>(
                             <Link to={user?`/posts/post/${post._id}`:"/login"}>
                                 <HomePosts key={post._id} post={post}/>

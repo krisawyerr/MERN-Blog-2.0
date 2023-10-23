@@ -97,9 +97,9 @@ function EditPost() {
     }
 
     return (
-        <div className="blkk">
+        <div className="fullPage">
             <SideNavbar />
-            <div className="bluee">
+            <div className="mainSection">
                 <Navbar/>
                 <div className='px-6 md:px-[200px] mt-8'>
                     <h1 className='font-bold md:text-2xl text-xl '>Update a post</h1>
