@@ -81,30 +81,30 @@ function CreatePost() {
         <SideNavbar />
         <div className="mainSection">
             <Navbar/>
-            <div className='px-6 md:px-[200px] mt-8'>
-                <h1 className='font-bold md:text-2xl text-xl '>Create a post</h1>
-                <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
-                    <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter post title' className='blk px-4 py-2 outline-none'/>
-                    <input onChange={(e)=>setFile(e.target.files[0])} type="file"  className='px-4'/>
-                    <div className='flex flex-col'>
-                        <div className='flex items-center space-x-4 md:space-x-8'>
-                            <input value={cat} onChange={(e)=>setCat(e.target.value)} className='blk px-4 py-2 outline-none' placeholder='Enter post category' type="text"/>
-                            <div onClick={addCategory} className='bg-black text-white px-4 py-2 font-semibold cursor-pointer'>Add</div>
+            <div className='createPost'>
+                <h1 className="spacing">Create a post</h1>
+                <form className='createPostForm'>
+                    <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter post title' className='spacing createPostTitle'/>
+                    <input onChange={(e)=>setFile(e.target.files[0])} type="file"  className='spacing'/>
+                    <div className='spacing createPostCats'>
+                        <div className='createPostEnterCats'>
+                            <input value={cat} onChange={(e)=>setCat(e.target.value)} placeholder='Enter post category' type="text"/>
+                            <div onClick={addCategory}>Add</div>
                         </div>
 
-                        <div className='flex px-4 mt-3'>
+                        <div className='createPostAddedCats'>
                             {cats?.map((c,i)=>(
-                                <div key={i} className='flex justify-center items-center space-x-2 mr-4 bg-gray-200 px-2 py-1 rounded-md'>
+                                <div key={i} className='createPostAddedCat'>
                                     <p>{c}</p>
-                                    <p onClick={deleteCategory} className='text-white bg-black rounded-full cursor-pointer p-1 text-sm'><ImCross/></p>
+                                    <p onClick={deleteCategory} className='createPostDeleteCat'><ImCross/></p>
                                 </div>                                
                             ))}
                         </div>
                     </div>
-                    <textarea onChange={(e)=>setDescription(e.target.value)} className='blk px-4 py-2 outline-none h-96' placeholder='Enter post'/>
-                    <div>
+                    <textarea onChange={(e)=>setDescription(e.target.value)} className='spacing createPostTextarea' placeholder='Enter post'/>
+                    <div className="spacing">
                       <label htmlFor="Continent">Continent Visited</label>
-                      <select id="Continent" name="Continent" className="ml-4" onChange={(e)=>setContinent(e.target.value)}>
+                      <select id="Continent" name="Continent" className="createPostVisited" onChange={(e)=>setContinent(e.target.value)}>
                         <option>Choose Continent</option>
                         <option value="Africa">Africa</option>
                         <option value="Europe">Europe</option>
@@ -118,9 +118,9 @@ function CreatePost() {
 
                     {/* AFRICA START */}
                     <>
-                      {continent==="Africa" && <div>
+                      {continent==="Africa" && <div className="spacing">
                         <label htmlFor="coffee">Part of Africa</label>
-                        <select id="Part of Africa" name="Part of Africa" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of Africa" name="Part of Africa" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Northern Africa">Northern Africa</option>
                           <option value="Eastern Africa">Eastern Africa</option>
@@ -129,9 +129,9 @@ function CreatePost() {
                           <option value="Western Africa">Western Africa</option>
                         </select>
                       </div>}
-                      {continent==="Africa" && subregion==="Northern Africa" && <div>
+                      {continent==="Africa" && subregion==="Northern Africa" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Algeria">Algeria</option>
                           <option value="Egypt">Egypt</option>
@@ -142,9 +142,9 @@ function CreatePost() {
                           <option value="Western Sahara">Western Sahara</option>
                         </select>
                       </div>}
-                      {continent==="Africa" && subregion==="Eastern Africa" && <div>
+                      {continent==="Africa" && subregion==="Eastern Africa" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Burundi">Burundi</option>
                           <option value="Comoros">Comoros</option>
@@ -166,9 +166,9 @@ function CreatePost() {
                           <option value="Zimbabwe">Zimbabwe</option>
                         </select>
                       </div>}
-                      {continent==="Africa" && subregion==="Central Africa" && <div>
+                      {continent==="Africa" && subregion==="Central Africa" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Angola">Angola</option>
                           <option value="Cameroon">Cameroon</option>
@@ -181,9 +181,9 @@ function CreatePost() {
                           <option value="São Tomé and Príncipe">São Tomé and Príncipe</option>
                         </select>
                       </div>}
-                      {continent==="Africa" && subregion==="Southern Africa" && <div>
+                      {continent==="Africa" && subregion==="Southern Africa" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Botswana">Botswana</option>
                           <option value="Eswatini">Eswatini</option>
@@ -192,9 +192,9 @@ function CreatePost() {
                           <option value="South Africa">South Africa</option>
                         </select>
                       </div>}
-                      {continent==="Africa" && subregion==="Western Africa" && <div>
+                      {continent==="Africa" && subregion==="Western Africa" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Benin">Benin</option>
                           <option value="Burkina Faso">Burkina Faso</option>
@@ -218,9 +218,9 @@ function CreatePost() {
 
                     {/* EUROPE START */}
                     <>
-                      {continent==="Europe" && <div>
+                      {continent==="Europe" && <div className="spacing">
                         <label htmlFor="coffee">Part of Europe</label>
-                        <select id="Part of Europe" name="Part of Europe" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of Europe" name="Part of Europe" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Eastern Europe">Eastern Europe</option>
                           <option value="Northern Europe">Northern Europe</option>
@@ -228,9 +228,9 @@ function CreatePost() {
                           <option value="Western Europe">Western Europe</option>
                         </select>
                       </div>}
-                      {continent==="Europe" && subregion==="Eastern Europe" && <div>
+                      {continent==="Europe" && subregion==="Eastern Europe" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Belarus">Belarus</option>
                           <option value="Bulgaria">Bulgaria</option>
@@ -244,9 +244,9 @@ function CreatePost() {
                           <option value="Ukraine">Ukraine</option>
                         </select>
                       </div>}
-                      {continent==="Europe" && subregion==="Northern Europe" && <div>
+                      {continent==="Europe" && subregion==="Northern Europe" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Denmark">Denmark</option>
                           <option value="Estonia">Estonia</option>
@@ -260,9 +260,9 @@ function CreatePost() {
                           <option value="United Kingdom">United Kingdom</option>
                         </select>
                       </div>}
-                      {continent==="Europe" && subregion==="Southern Europe" && <div>
+                      {continent==="Europe" && subregion==="Southern Europe" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Albania">Albania</option>
                           <option value="Andorra">Andorra</option>
@@ -278,9 +278,9 @@ function CreatePost() {
                           <option value="Slovenia">Slovenia</option>
                         </select>
                       </div>}
-                      {continent==="Europe" && subregion==="Western Europe" && <div>
+                      {continent==="Europe" && subregion==="Western Europe" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Austria">Austria</option>
                           <option value="Belgium">Belgium</option>
@@ -299,9 +299,9 @@ function CreatePost() {
 
                     {/* OCEANIA START */}
                     <>
-                      {continent==="Oceania" && <div>
+                      {continent==="Oceania" && <div className="spacing">
                         <label htmlFor="coffee">Part of Oceania</label>
-                        <select id="Part of Oceania" name="Part of Oceania" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of Oceania" name="Part of Oceania" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Australia and New Zealand">Australia and New Zealand</option>
                           <option value="Melanesia">Melanesia</option>
@@ -309,17 +309,17 @@ function CreatePost() {
                           <option value="Polynesia">Polynesia</option>
                         </select>
                       </div>}
-                      {continent==="Oceania" && subregion==="Australia and New Zealand" && <div>
+                      {continent==="Oceania" && subregion==="Australia and New Zealand" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Australia">Australia</option>
                           <option value="New Zealand">New Zealand</option>
                         </select>
                       </div>}
-                      {continent==="Oceania" && subregion==="Melanesia" && <div>
+                      {continent==="Oceania" && subregion==="Melanesia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Fiji">Fiji</option>
                           <option value="New Caledonia">New Caledonia</option>
@@ -328,9 +328,9 @@ function CreatePost() {
                           <option value="Vanuatu">Vanuatu</option>
                         </select>
                       </div>}
-                      {continent==="Oceania" && subregion==="Micronesia" && <div>
+                      {continent==="Oceania" && subregion==="Micronesia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Guam">Guam</option>
                           <option value="Kiribati">Kiribati</option>
@@ -341,9 +341,9 @@ function CreatePost() {
                           <option value="Palau">Palau</option>
                         </select>
                       </div>}
-                      {continent==="Oceania" && subregion==="Polynesia" && <div>
+                      {continent==="Oceania" && subregion==="Polynesia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="American Samoa">American Samoa</option>
                           <option value="Cook Islands">Cook Islands</option>
@@ -361,27 +361,27 @@ function CreatePost() {
 
                     {/* North America START */}
                     <>
-                      {continent==="North America" && <div>
+                      {continent==="North America" && <div className="spacing">
                         <label htmlFor="coffee">Part of North America</label>
-                        <select id="Part of North America" name="Part of North America" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of North America" name="Part of North America" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Northern America">Northern America</option>
                           <option value="Central America">Central America</option>
                           <option value="The Caribbean">The Caribbean</option>
                         </select>
                       </div>}
-                      {continent==="North America" && subregion==="Northern America" && <div>
+                      {continent==="North America" && subregion==="Northern America" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Canada">Canada</option>
                           <option value="United States of America">United States of America</option>
                           <option value="Mexico">Mexico</option>
                         </select>
                       </div>}
-                      {continent==="North America" && subregion==="Central America" && <div>
+                      {continent==="North America" && subregion==="Central America" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Belize">Belize</option>
                           <option value="Costa Rica">Costa Rica</option>
@@ -392,9 +392,9 @@ function CreatePost() {
                           <option value="Panama">Panama</option>
                         </select>
                       </div>}
-                      {continent==="North America" && subregion==="The Caribbean" && <div>
+                      {continent==="North America" && subregion==="The Caribbean" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Anguilla">Anguilla</option>
                           <option value="Antigua and Barbuda">Antigua and Barbuda</option>
@@ -444,9 +444,9 @@ function CreatePost() {
 
                     {/* ASIA START */}
                     <>
-                      {continent==="Asia" && <div>
+                      {continent==="Asia" && <div className="spacing">
                         <label htmlFor="coffee">Part of Asia</label>
-                        <select id="Part of Asia" name="Part of Asia" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of Asia" name="Part of Asia" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Central Asia">Central Asia</option>
                           <option value="Eastern Asia">Eastern Asia</option>
@@ -455,9 +455,9 @@ function CreatePost() {
                           <option value="Middle East">Middle East</option>
                         </select>
                       </div>}
-                      {continent==="Asia" && subregion==="Central Asia" && <div>
+                      {continent==="Asia" && subregion==="Central Asia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Kazakhstan">Kazakhstan</option>
                           <option value="Kyrgyzstan">Kyrgyzstan</option>
@@ -466,9 +466,9 @@ function CreatePost() {
                           <option value="Uzbekistan">Uzbekistan</option>
                         </select>
                       </div>}
-                      {continent==="Asia" && subregion==="Eastern Asia" && <div>
+                      {continent==="Asia" && subregion==="Eastern Asia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="China">China</option>
                           <option value="North Korea">North Korea</option>
@@ -478,9 +478,9 @@ function CreatePost() {
                           <option value="Taiwan">Taiwan</option>
                         </select>
                       </div>}
-                      {continent==="Asia" && subregion==="South-eastern Asia" && <div>
+                      {continent==="Asia" && subregion==="South-eastern Asia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Brunei">Brunei</option>
                           <option value="Cambodia">Cambodia</option>
@@ -495,9 +495,9 @@ function CreatePost() {
                           <option value="Vietnam">Vietnam</option>
                         </select>
                       </div>}
-                      {continent==="Asia" && subregion==="Southern Asia" && <div>
+                      {continent==="Asia" && subregion==="Southern Asia" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Afghanistan">Afghanistan</option>
                           <option value="Bangladesh">Bangladesh</option>
@@ -510,9 +510,9 @@ function CreatePost() {
                           <option value="Sri Lanka">Sri Lanka</option>
                         </select>
                       </div>}
-                      {continent==="Asia" && subregion==="Middle East" && <div>
+                      {continent==="Asia" && subregion==="Middle East" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Armenia">Armenia</option>
                           <option value="Azerbaijan">Azerbaijan</option>
@@ -538,16 +538,16 @@ function CreatePost() {
 
                     {/* South America START */}
                     <>
-                      {continent==="South America" && <div>
+                      {continent==="South America" && <div className="spacing">
                         <label htmlFor="coffee">Part of South America</label>
-                        <select id="Part of South America" name="Part of South America" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of South America" name="Part of South America" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="South America">South America</option>
                         </select>
                       </div>}
-                      {continent==="South America" && subregion==="South America" && <div>
+                      {continent==="South America" && subregion==="South America" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Argentina">Argentina</option>
                           <option value="Bolivia">Bolivia</option>
@@ -570,16 +570,16 @@ function CreatePost() {
 
                     {/* Antarctica START */}
                     <>
-                      {continent==="Antarctica" && <div>
+                      {continent==="Antarctica" && <div className="spacing">
                         <label htmlFor="Antarctica">Part of Antarctica</label>
-                        <select id="Part of Antarctica" name="Part of Antarctica" className="blk ml-4" onChange={(e)=>setSubregion(e.target.value)}>
+                        <select id="Part of Antarctica" name="Part of Antarctica" className="createPostVisited" onChange={(e)=>setSubregion(e.target.value)}>
                           <option>Choose Region</option>
                           <option value="Antarctica">Antarctica</option>
                         </select>
                       </div>}
-                      {continent==="Antarctica" && subregion==="Antarctica" && <div>
+                      {continent==="Antarctica" && subregion==="Antarctica" && <div className="spacing">
                         <label htmlFor="Country">Country</label>
-                        <select id="Country" name="Country" className="blk ml-4" onChange={(e)=>setCountry(e.target.value)}>
+                        <select id="Country" name="Country" className="createPostVisited" onChange={(e)=>setCountry(e.target.value)}>
                           <option>Choose Country</option>
                           <option value="Antarctica">Antarctica</option>
                         </select>
@@ -587,7 +587,7 @@ function CreatePost() {
                     </>
 
                     
-                    <button onClick={handleCreate} className='bg-black w-full md:w-[20%] mx-auto text-white font-semibold px-4 py-2 md:text-xl text-lg'>Create</button>
+                    <button onClick={handleCreate} className='spacing createPostButton'>Create</button>
                 </form>
             </div>
             <Footer/>
