@@ -46,7 +46,7 @@ function SideNavbar() {
             {user && path !== `/myblogs/${user._id}` && <h3 className="sideNavText"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
             {user && path === `/myblogs/${user._id}` && <h3 className="sideNavTextSelected"><Link to={"/myblogs/"+user._id}>My Blogs</Link></h3>}
         </div>}
-        <div class="sideNavBottomSection">
+        <div className="sideNavBottomSection">
             {!user && <h3 className="sideNavText"><Link to="/login">Login</Link></h3>}
             {!user && <h3 className="sideNavText"><Link to="/register">Register</Link></h3>}
             {user && <h3 onClick={handleLogout} className="sideNavText">Logout</h3>}
