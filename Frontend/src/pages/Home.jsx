@@ -23,7 +23,7 @@ function Home() {
     try {
       const res = await axios.get(URL + "/api/posts/" + search);
       const sortedPosts = res.data.reverse(); // Reverse the array to have the newest posts first
-      const limitedPosts = sortedPosts.slice(0, 8); // Display only the first 8 posts
+      const limitedPosts = sortedPosts.slice(0, 12); // Display only the first 8 posts
       setPosts(limitedPosts);
       if (limitedPosts.length === 0) {
         setNoResults(true);

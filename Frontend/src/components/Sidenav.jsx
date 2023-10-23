@@ -33,14 +33,10 @@ function SideNavbar() {
             <h1 className="sideNavTitle"><Link to="/">Blog Market</Link></h1>
         </div>
         {!user && <div>
-            {path !== "/" && <h3 className="sideNavText"><Link to="/">Explore</Link></h3>}
-            {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Explore</Link></h3>}
             {path !== "/" && <h3 className="sideNavText"><Link to="/">Search</Link></h3>}
             {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Search</Link></h3>}
         </div>}
         {user && <div>
-            {path !== "/" && <h3 className="sideNavText"><Link to="/">Explore</Link></h3>}
-            {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Explore</Link></h3>}
             {path !== "/" && <h3 className="sideNavText"><Link to="/">Search</Link></h3>}
             {path === "/" && <h3 className="sideNavTextSelected"><Link to="/">Search</Link></h3>}
             {user && path !== `/profile/${user._id}` && <h3 className="sideNavText"><Link to={"/profile/"+user._id}>Profile</Link></h3>}
