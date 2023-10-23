@@ -1,21 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.blkk {
-    display: grid;
-    grid-template-columns: 1fr 20fr;
-    height: 100vh;
-}
-@media (max-width: 851px) {
-    .blkk {
-        display: grid;
-        grid-template-columns: 1fr;
-        height: 100vh;
-    }
-}
-.bluee {
-    overflow: auto;
-}
+
+
 
 
 .blk {
@@ -23,7 +10,33 @@
 }
 
 
-
+/* ALL PAGES */
+.fullPage {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    height: 100vh;
+}
+@media (max-width: 851px) {
+    .fullPage {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+    }
+}
+.mainSection {
+    overflow: auto;
+}
+.loader {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 40vh;
+}
+.noPostSection {
+    margin-top: 4rem; 
+    font-weight: 700; 
+    text-align: center; 
+}
 
 /* NAVBAR.JSX */
 .navbar {
@@ -189,6 +202,7 @@
         padding-right: 200px;
     }
 }
+
 
 /* MYBLOGS.JSX */
 .myBlogGrid {
