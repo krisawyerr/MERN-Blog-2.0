@@ -84,11 +84,11 @@ function CreatePost() {
             <div className='px-6 md:px-[200px] mt-8'>
                 <h1 className='font-bold md:text-2xl text-xl '>Create a post</h1>
                 <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
-                    <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter post title' className='px-4 py-2 outline-none'/>
+                    <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter post title' className='blk px-4 py-2 outline-none'/>
                     <input onChange={(e)=>setFile(e.target.files[0])} type="file"  className='px-4'/>
                     <div className='flex flex-col'>
                         <div className='flex items-center space-x-4 md:space-x-8'>
-                            <input value={cat} onChange={(e)=>setCat(e.target.value)} className='px-4 py-2 outline-none' placeholder='Enter post category' type="text"/>
+                            <input value={cat} onChange={(e)=>setCat(e.target.value)} className='blk px-4 py-2 outline-none' placeholder='Enter post category' type="text"/>
                             <div onClick={addCategory} className='bg-black text-white px-4 py-2 font-semibold cursor-pointer'>Add</div>
                         </div>
 
@@ -101,7 +101,7 @@ function CreatePost() {
                             ))}
                         </div>
                     </div>
-                    <textarea onChange={(e)=>setDescription(e.target.value)} className='px-4 py-2 outline-none' placeholder='Enter post description'/>
+                    <textarea onChange={(e)=>setDescription(e.target.value)} className='blk px-4 py-2 outline-none h-96' placeholder='Enter post'/>
                     <div>
                       <label htmlFor="Continent">Continent Visited</label>
                       <select id="Continent" name="Continent" className="ml-4" onChange={(e)=>setContinent(e.target.value)}>
