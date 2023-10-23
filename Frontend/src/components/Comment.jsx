@@ -23,19 +23,19 @@ function Comment({c, post}) {
     console.log(user)
     
     return (
-        <div className="px-2 py-2 bg-gray-200 rounded-lg mb-4">
-            <div className="flex items-center justify-between">
-                <h3 className="font-bold text-gray-600">@{c.author}</h3>
-                <div className="flex justify-center items-center space-x-4">
-                    <p>{new Date(c.updatedAt).toString().slice(0,15)}</p>
-                    <p>{new Date(c.updatedAt).toString().slice(16,24)}</p>
+        <div className="comment">
+            <div className="commentInfo">
+                <h3 className="commentAuthor">@{c.author}</h3>
+                <div className="commentDateAndDelete">
+                    <p className="commentDate">{new Date(c.updatedAt).toString().slice(0,15)}</p>
+                    <p className="commentDate">{new Date(c.updatedAt).toString().slice(16,24)}</p>
                     {user?._id === c?.userId ?
-                        <div className="flex items-center justify-center space-x-2">
-                            <p onClick={()=>deleteComment(c._id)} className="cursor-pointer"><MdDelete/></p>
+                        <div className="commentDelete">
+                            <p onClick={()=>deleteComment(c._id)}><MdDelete/></p>
                         </div>: ""}
                 </div>
             </div>
-            <p className="px-4 mt-2">{c.comment}</p>
+            <p className="commentContent">{c.comment}</p>
         </div>
     )
 }

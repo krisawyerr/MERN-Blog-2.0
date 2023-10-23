@@ -58,7 +58,7 @@ const MyBlogs = () => {
                             <Link to={user?`/posts/post/${post._id}`:"/login"} >
                                 <HomePosts key={post._id} post={post}/>
                             </Link>
-                            )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+                            )):<h3 className="loader">No posts available</h3>}
                         </div>:
                         <div className="myBlogGrid">
                             {loader?<div className="loader"><Loader/></div>:!noResults?
@@ -66,7 +66,7 @@ const MyBlogs = () => {
                             <Link to={user?`/posts/post/${post._id}`:"/login"}>
                                 <HomePosts key={post._id} post={post}/>
                             </Link>
-                            )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+                            )):<h3 className="loader">No posts available</h3>}
                         </div>}
                 </div>
                 <Footer/>

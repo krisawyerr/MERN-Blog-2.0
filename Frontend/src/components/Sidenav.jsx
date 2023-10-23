@@ -28,7 +28,7 @@ function SideNavbar() {
     }
 
   return (
-    <div class="sideNav">
+    <div className="sideNav">
         <div>
             <h1 className="sideNavTitle"><Link to="/">T J C</Link></h1>
         </div>
