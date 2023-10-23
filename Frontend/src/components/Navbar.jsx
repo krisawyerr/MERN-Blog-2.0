@@ -22,7 +22,7 @@ function Navbar() {
     <div className="navbar">
       <div className="navbarTitleAndMenu">
         <div className="navbarTitle">
-          <h1><Link to="/">Blog Market</Link></h1>
+          <h1><Link to="/">TJC</Link></h1>
         </div>
 
         <div className="navbarMenu">

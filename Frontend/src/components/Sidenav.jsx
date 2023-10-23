@@ -30,7 +30,7 @@ function SideNavbar() {
   return (
     <div class="sideNav">
         <div>
-            <h1 className="sideNavTitle"><Link to="/">Blog Market</Link></h1>
+            <h1 className="sideNavTitle"><Link to="/">T J C</Link></h1>
         </div>
         {!user && <div>
             {path !== "/" && <h3 className="sideNavText"><Link to="/">Search</Link></h3>}
