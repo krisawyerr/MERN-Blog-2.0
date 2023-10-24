@@ -6,7 +6,7 @@ import { UserContext } from '../context/UserContext'
 import { URL } from '../url'
 import axios from 'axios'
 import { Navigate, useNavigate } from 'react-router-dom'
-import SideNavbar from "../components/sidenav";
+import SideNavbar from "../components/Sidenav";
 
 function CreatePost() {
     const [title,setTitle]=useState("")
