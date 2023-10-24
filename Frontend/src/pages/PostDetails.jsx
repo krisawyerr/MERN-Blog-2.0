@@ -9,7 +9,7 @@ import { URL,IF } from "../url"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import Loader from "../components/Loader"
-import SideNavbar from "../components/sidenav"
+import SideNavbar from "../components/Sidenav";
 
 function PostDetails() {
 

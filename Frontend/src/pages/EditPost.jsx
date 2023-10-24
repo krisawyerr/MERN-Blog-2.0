@@ -6,7 +6,7 @@ import axios from "axios"
 import { URL } from "../url"
 import { useNavigate, useParams } from "react-router-dom"
 import { UserContext } from "../context/UserContext"
-import SideNavbar from "../components/sidenav"
+import SideNavbar from "../components/Sidenav";
 
 function EditPost() {
     const [title,setTitle]=useState("")

@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import Loader from '../components/Loader'
 import { UserContext } from "../context/UserContext"
-import SideNavbar from "../components/sidenav"
+import SideNavbar from "../components/Sidenav"
 
 function Home() {
   const {search}=useLocation()

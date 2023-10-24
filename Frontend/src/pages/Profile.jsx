@@ -6,7 +6,7 @@ import axios from "axios"
 import { IF, URL } from "../url"
 import { UserContext } from "../context/UserContext"
 import { useNavigate, useParams } from "react-router-dom"
-import SideNavbar from "../components/sidenav"
+import SideNavbar from "../components/Sidenav";
 
 function Profile() {
   const param=useParams().id
