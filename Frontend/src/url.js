@@ -1,2 +1,2 @@
-export const URL='https://travelersjournalcollection.netlify.app'
-export const IF='https://travelersjournalcollection.netlify.app/images/'
+export const URL='http://localhost:5000'
+export const IF='http://localhost:5000/images/'
